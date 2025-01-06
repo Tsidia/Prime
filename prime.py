@@ -161,7 +161,7 @@ async def on_message(message: discord.Message):
 
 # === 2) Once-per-day scanning task ===
 
-@tasks.loop(hours=24)
+@tasks.loop(minutes=10)
 async def daily_media_scan():
     """
     Once per day, find new links in SOURCE_CHANNEL_ID and DM them to all members of ROLE_ID.
